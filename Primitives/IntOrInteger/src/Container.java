@@ -9,4 +9,8 @@ public class Container {
         return count;
     }
 
+    public int increment(int a){
+        return ++a;
+    }
+
 }
