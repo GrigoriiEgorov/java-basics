@@ -9,7 +9,4 @@ public class Container {
         return count;
     }
 
-    public void printMessage(String message){
-        System.out.println(message);
-    }
 }
