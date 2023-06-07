@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="ERRORS"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/errors.log</file>
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>errors.%d{yyyy-MM-dd}.log</fileNamePattern>
+
+            <!-- Храним файлы логов 10 дней -->
+            <maxHistory>10</maxHistory>
+
+            <!-- Максимальный размер файлов лога 10 мегабайт -->
+            <totalSizeCap>10MB</totalSizeCap>
+
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>%d{dd.MM.yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{20} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="QUERIES"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/queries.log</file>
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>queries.%d{yyyy-MM-dd}.log</fileNamePattern>
+
+            <!-- Храним файлы логов 10 дней -->
+            <maxHistory>10</maxHistory>
+
+            <!-- Максимальный размер файлов лога 10 мегабайт -->
+            <totalSizeCap>10MB</totalSizeCap>
+
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>%d{dd.MM.yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{20} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--    all, trace, debug, info, warn, error, fatal-->
+    <root level="debug">
+        <appender-ref ref="ERRORS"/>
+        <appender-ref ref="QUERIES"/>
+    </root>
+
+
+</configuration>

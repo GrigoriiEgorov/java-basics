@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: ExceptionTests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.232 s <<< FAILURE! - in ExceptionTests
+insertCorrectData  Time elapsed: 0.051 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <+79991234567> but was: <79991234567>
+	at ExceptionTests.insertCorrectData(ExceptionTests.java:69)
+
